@@ -35,5 +35,7 @@ describe('pigLatin', function () {
   it("handles words that start with y and one consonant", function () {
     expect(pigLatin('ysellow')).to.equal('ellowysay')
   });
-
+  it("handles translate sentences containing multiple words", function () {
+    expect(pigLatin('hello world')).to.equal('ellohay orldway')
+  });
 });

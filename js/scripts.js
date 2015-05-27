@@ -1,13 +1,19 @@
-var pigLatin = function(word) {
-  var firstLetter = word[0]
-  if (firstLetter === 'y') {
-    return pigLatinConsonant(word);
-  }
-  if (/[qwrtpsdfghjklzxcvbnm]/i.test(firstLetter)) {
-    return pigLatinConsonant(word);
-  } else {
-    return pigLatinVowel(word);
-  }
+var pigLatin = function(sentence) {
+  var words = sentence.split(" ");
+  var newSentence = ""
+  words.forEach(function(word) {
+    var firstLetter = word[0]
+    if (firstLetter === 'y') {
+      var output = pigLatinConsonant(word);
+    } else if (/[qwrtpsdfghjklzxcvbnm]/i.test(firstLetter)) {
+      var output = pigLatinConsonant(word);
+    } else {
+      var output = pigLatinVowel(word);
+    }
+    newSentence = newSentence.concat(" ").concat(output);
+  });
+  newSentence = newSentence.trim();
+  return newSentence;
 };
 
 var pigLatinVowel = function(word) {
