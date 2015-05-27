@@ -29,4 +29,7 @@ describe('pigLatin', function () {
   it("handles words that start with y and one consonant", function () {
     expect(pigLatin('ysellow')).to.equal('ellowysay')
   });
+  it("handles words that start with qu", function (){
+    expect(pigLatin('queen')).to.equal('eenquay')
+  });
 });

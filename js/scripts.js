@@ -21,7 +21,12 @@ var pigLatinConsonant = function(word) {
   var firstTwo = word.substring(0, 2)
   var firstThree = word.substring(0, 3)
 
-  if (/[qwrtpsdfghjklzxcvbnm]{2,}/i.test(word.substring(1,3))) {
+  if (firstTwo === "qu") {
+    word = word.substring(2, word.length)
+    word = word.concat(firstTwo).concat('ay')
+    return word;
+    
+  } else if (/[qwrtpsdfghjklzxcvbnm]{2,}/i.test(word.substring(1,3))) {
     word = word.substring(3, word.length)
     word = word.concat(firstThree).concat('ay')
     return word;
