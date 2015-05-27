@@ -8,4 +8,7 @@ describe('pigLatinConsonant', function() {
   it("will put the first letter to the end of the word and add 'ay'", function() {
     expect(pigLatinConsonant('ball')).to.equal('allbay');
   });
+  it("handles words starting with multiple consonants", function() {
+    expect(pigLatinConsonant('bland')).to.equal('andblay');
+  });
 });
