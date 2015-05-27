@@ -20,4 +20,7 @@ describe('pigLatin', function () {
   it("it returns the pig latin translation of a word that starts with a vowel", function() {
     expect(pigLatin('elephant')).to.equal('elephantay');
   });
+  it("handles words that start with y", function () {
+    expect(pigLatin('yellow')).to.equal('ellowyay');
+  });
 });

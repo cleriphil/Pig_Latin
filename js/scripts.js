@@ -1,6 +1,9 @@
 var pigLatin = function(word) {
   var firstLetter = word[0]
-  if (/[qwrtypsdfghjklzxcvbnm]/i.test(firstLetter)) {
+  if (firstLetter === 'y') {
+    return pigLatinConsonant(word);
+  }
+  if (/[qwrtpsdfghjklzxcvbnm]/i.test(firstLetter)) {
     return pigLatinConsonant(word);
   } else {
     return pigLatinVowel(word);
@@ -18,11 +21,11 @@ var pigLatinConsonant = function(word) {
   var firstTwo = word.substring(0, 2)
   var firstThree = word.substring(0, 3)
 
-  if (/[qwrtypsdfghjklzxcvbnm]{3,}/i.test(word.substring(0,3))) {
+  if (/[qwrtpsdfghjklzxcvbnm]{2,}/i.test(word.substring(1,3))) {
     word = word.substring(3, word.length)
     word = word.concat(firstThree).concat('ay')
     return word;
-  } else if (/[qwrtypsdfghjklzxcvbnm]{2,}/i.test(word.substring(0,2))) {
+  } else if (/[qwrtpsdfghjklzxcvbnm]/i.test(word.substring(1,2))) {
     word = word.substring(2, word.length)
     word = word.concat(firstTwo).concat('ay')
     return word;
