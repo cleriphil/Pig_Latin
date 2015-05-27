@@ -14,6 +14,12 @@ describe('pigLatinConsonant', function() {
   it("handles words starting with three consonants", function() {
     expect(pigLatinConsonant('strong')).to.equal('ongstray');
   })
+  it("handles words that start with qu", function (){
+    expect(pigLatinConsonant('queen')).to.equal('eenquay');
+  });
+  it("handles words that have q as the second letter and u as the third", function() {
+    expect(pigLatinConsonant('squirt')).to.equal('irtsquay');
+  });
 });
 
 describe('pigLatin', function () {
@@ -29,7 +35,5 @@ describe('pigLatin', function () {
   it("handles words that start with y and one consonant", function () {
     expect(pigLatin('ysellow')).to.equal('ellowysay')
   });
-  it("handles words that start with qu", function (){
-    expect(pigLatin('queen')).to.equal('eenquay')
-  });
+
 });
