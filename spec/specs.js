@@ -23,4 +23,7 @@ describe('pigLatin', function () {
   it("handles words that start with y", function () {
     expect(pigLatin('yellow')).to.equal('ellowyay');
   });
+  it("handles unlikey words that start with y and consonants", function (){
+    expect(pigLatin('yssellow')).to.equal('ellowyssay')
+  });
 });
