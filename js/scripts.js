@@ -43,3 +43,14 @@ var pigLatinConsonant = function(word) {
     return word;
   }
 };
+
+$(document).ready(function() {
+  $('form#translator').submit(function(event) {
+    $('#result').show();
+    var word = $('input#word').val();
+    var output = pigLatin(word);
+    $('.pig_latin').text(output);
+    event.preventDefault();
+  });
+
+});
