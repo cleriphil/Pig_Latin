@@ -1,3 +1,12 @@
+var pigLatin = function(word) {
+  var firstLetter = word[0]
+  if (/[qwrtypsdfghjklzxcvbnm]/i.test(firstLetter)) {
+    return pigLatinConsonant(word);
+  } else {
+    return pigLatinVowel(word);
+  }
+};
+
 var pigLatinVowel = function(word) {
   word = word.concat('ay');
   return word;
